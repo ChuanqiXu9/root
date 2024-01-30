@@ -2307,8 +2307,17 @@ defm prebuilt_implicit_modules : BoolFOption<"prebuilt-implicit-modules",
   PosFlag<SetTrue, [], "Look up implicit modules in the prebuilt module path">,
   NegFlag<SetFalse>, BothFlags<[NoXarchOption, CC1Option]>>;
 
+defm load_external_specializations_lazily : BoolOption<"f", "load-external-specializations-lazily",
+  LangOpts<"LoadExternalSpecializationsLazily">, DefaultFalse,
+  PosFlag<SetTrue, [],
+          "Load required external specialization only when required.">,
+  NegFlag<SetFalse>>,
+  BothFlags<[CoreOption, CC1Option]>,
+  Group<f_clang_Group>;
+
 def fmodule_output_EQ : Joined<["-"], "fmodule-output=">, Flags<[NoXarchOption, CC1Option]>,
-  HelpText<"Save intermediate module file results when compiling a standard C++ module unit.">;
+                          HelpText<"Save intermediate module file results when compiling a standard C++ module unit.">;
+
 def fmodule_output : Flag<["-"], "fmodule-output">, Flags<[NoXarchOption, CC1Option]>,
   HelpText<"Save intermediate module file results when compiling a standard C++ module unit.">;
 

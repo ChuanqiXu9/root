@@ -1288,3 +1288,6 @@ void ODRHash::AddQualType(QualType T) {
 void ODRHash::AddBoolean(bool Value) {
   Bools.push_back(Value);
 }
+
+void ODRHash::AddInteger(unsigned Value) { ID.AddInteger(Value); }
+

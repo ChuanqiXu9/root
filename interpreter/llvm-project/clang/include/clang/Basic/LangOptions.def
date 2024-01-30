@@ -175,6 +175,7 @@ COMPATIBLE_LANGOPT(ModulesTS  , 1, 0, "C++ Modules TS syntax")
 COMPATIBLE_LANGOPT(CPlusPlusModules, 1, 0, "C++ modules syntax")
 BENIGN_ENUM_LANGOPT(CompilingModule, CompilingModuleKind, 3, CMK_None,
                     "compiling a module interface")
+COMPATIBLE_LANGOPT(LoadExternalSpecializationsLazily, 1, 0, "Load External Specializations Lazily")
 BENIGN_LANGOPT(CompilingPCH, 1, 0, "building a pch")
 BENIGN_LANGOPT(BuildingPCHWithObjectFile, 1, 0, "building a pch which has a corresponding object file")
 BENIGN_LANGOPT(CacheGeneratedPCH, 1, 0, "cache generated PCH files in memory")
